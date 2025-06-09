@@ -1,0 +1,158 @@
+.advice {
+  position: relative;
+
+  background-image: url(../../images/advice/bgImage.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: clamp(40px, 1.964rem + 2.68vw, 70px) 0;
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.advice-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.advice-title {
+  font-size: clamp(20px, 0.75rem + 2.5vw, 48px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+
+  margin-bottom: 22px;
+}
+.advice-subtitle {
+  font-size: clamp(16px, 0.857rem + 0.71vw, 24px);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+.advice-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+
+  max-width: 580px;
+  width: 100%;
+
+  margin-top: 22px;
+}
+.adive-input--wrapper {
+  input {
+    background-color: $colorWhite;
+    padding: clamp(16px, 0.929rem + 0.36vw, 20px) 20px;
+    border-radius: 20px;
+
+    color: $colorBlack;
+
+    width: 100%;
+  }
+}
+
+.adive-input--radios {
+  background-color: $colorWhite;
+  padding: clamp(16px, 0.929rem + 0.36vw, 20px) 20px;
+  border-radius: 20px;
+
+  color: $colorBlack;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    color: #868585;
+  }
+}
+
+.advice-header--accordeon {
+  img {
+    transition: all 0.3s ease;
+  }
+}
+
+.advice-header--accordeon.active {
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+.radio-items {
+  width: 100%;
+  border-radius: 14px;
+  
+  /* Начальные значения */
+  max-height: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  margin-top: 0;
+  opacity: 0;
+  
+  /* Анимация всех свойств */
+  transition: 
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    border 0.3s ease,
+    margin 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.radio-items.active {
+  max-height: 500px;
+  padding: 8px 0;
+  border: 1px solid #e6e6e6;
+  margin-top: 16px;
+  opacity: 1;
+}
+
+.radio-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  column-gap: 10px;
+
+  width: fit-content;
+
+  font-size: clamp(14px, 0.839rem + 0.18vw, 16px);
+  font-weight: 500;
+
+  padding: 12px 10px;
+}
+
+.radio-label {
+  text-wrap-mode: nowrap;
+}
+
+.button--advice {
+    padding: 12px 0;
+}
+
+#politicConf {
+    font-size: 14px;
+}

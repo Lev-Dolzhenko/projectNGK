@@ -1,0 +1,62 @@
+.about {
+  padding: clamp(37px, 1.188rem + 5.63vw, 100px) 0;
+}
+.container {
+}
+.about-wrapper {
+}
+.about-wrapper--title {
+  margin-bottom: clamp(16px, 0.75rem + 1.25vw, 30px);
+}
+
+.title-span--about {
+}
+
+.about-wrapper--subtitle {
+  margin-bottom: clamp(16px, 0.464rem + 2.68vw, 46px);
+
+  p {
+    font-size: clamp(15px, 0.777rem + 0.8vw, 24px);
+    color: #b3b3b3;
+  }
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 59px;
+  row-gap: 55px;
+
+  p {
+    font-size: clamp(14px, 0.696rem + 0.89vw, 24px);
+    font-weight: 400;
+    color: #c3c3c3;
+    line-height: 1.6;
+  }
+}
+
+.about-item {
+  padding: clamp(20px, 1.036rem + 1.07vw, 32px)
+    clamp(24px, 1.286rem + 1.07vw, 36px);
+  background-color: #252525;
+  border-radius: clamp(20px, 0.893rem + 1.79vw, 40px);
+}
+
+.about-item--history {
+}
+.about-item--mission {
+}
+.about-item--team {
+  grid-column: 1/3;
+}
+
+@media (max-width: 1200px) {
+  .about-container {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
+
+  .about-item--team {
+    grid-column: unset;
+  }
+}

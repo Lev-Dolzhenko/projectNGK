@@ -1,0 +1,79 @@
+body {
+  font-family: $lato;
+  color: $colorWhite;
+  font-size: 16px;
+  background-color: $colorBg;
+}
+
+a {
+  transition: color 0.2s linear;
+}
+
+.container {
+  max-width: 1272px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.none {
+  display: none !important;
+}
+
+.block {
+  overflow-y: hidden; /* Блокирует горизонтальный скролл */
+  width: 100%; /* Фиксирует ширину */
+  position: relative; /* Для корректной работы */
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(16px, 0.929rem + 0.36vw, 20px);
+
+  transition: box-shadow 0.3s linear;
+
+  background: linear-gradient(90deg, #ff6032, #ff7e59);
+  border-radius: 16px;
+
+  &-header {
+    padding: clamp(8px, 0.357rem + 0.71vw, 16px)
+      clamp(24px, 1.321rem + 0.89vw, 34px);
+  }
+
+  &:hover {
+    box-shadow: 0 0 8px 4px $colorAccent;
+  }
+}
+
+.title2 {
+  font-size: clamp(16px, 0.643rem + 1.79vw, 36px);
+  font-weight: 600;
+
+  &--about {
+    margin-bottom: 12px;
+    color: #d8d8d8;
+  }
+
+
+}
+
+.title3 {
+  font-size: clamp(16px, 0.714rem + 1.43vw, 32px);
+
+    &--basic {
+    color: #D9D9D9;
+  }
+}
+
+.title-span {
+  font-weight: 400;
+  font-size: clamp(14px, 0.768rem + 0.54vw, 20px);
+  color: $colorAccent;
+
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-left: 1px solid $colorAccent;
+}

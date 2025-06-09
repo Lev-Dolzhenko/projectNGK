@@ -1,0 +1,33 @@
+.accordion-header--basic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+}
+
+.accordion-header--basic.active {
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion-content--basic {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  color: #787878;
+}
+.accordion-content--basic.active {
+  max-height: 500px; /* достаточно большой max-height, чтобы вместить контент */
+}
+
+.basic-item--mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-top: 28px;
+}
