@@ -29,26 +29,43 @@
     <script defer src="scripts/accordeonForm.js"></script>
     <!-- Форма -->
     <script defer src="scripts/form.js"></script>
+    <!-- Подключаем GSAP -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Анимации -->
+    <script defer src="scripts/animations.js"></script>
+    <!-- Прячем header и добавляем скролл к определенному блоку -->
+    <script defer src="scripts/headerHideAndScrollTo.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header-wrapper">
           <div class="header-logo">
-            <img
-              src="images/common/logotypeIcon.svg"
-              alt="Логотип Компании"
-            />
+            <img src="images/common/logotypeIcon.svg" alt="Логотип Компании" />
           </div>
           <nav class="header-nav">
             <ul class="header-list">
-              <li class="header-item">О компании</li>
-              <li class="header-item">Основные услуги</li>
-              <li class="header-item">Дополнительные услуги</li>
-              <li class="header-item">Наши преимущества</li>
+              <li class="header-item scroll-button" data-target="about">
+                О компании
+              </li>
+              <li class="header-item scroll-button" data-target="main">
+                Основные услуги
+              </li>
+              <li class="header-item scroll-button" data-target="add">
+                Дополнительные услуги
+              </li>
+              <li class="header-item scroll-button" data-target="choose">
+                Наши преимущества
+              </li>
             </ul>
           </nav>
-          <button class="button button-header">Оставить заявку</button>
+          <button class="button button-header scroll-button" data-target="form">
+            Оставить заявку
+          </button>
           <button class="burger-btn">
             <span class="burger-line line-1"></span>
             <span class="burger-line line-2"></span>
@@ -58,18 +75,28 @@
       </div>
       <nav class="header-nav--mobile">
         <ul class="header-list--mobile">
-          <li class="header-item--mobile">О компании</li>
-          <li class="header-item--mobile">Основные услуги</li>
-          <li class="header-item--mobile">Дополнительные услуги</li>
-          <li class="header-item--mobile">Наши преимущества</li>
-          <li class="header-item--mobile">Оставить заявку</li>
+          <li class="header-item--mobile scroll-button" data-target="about">
+            О компании
+          </li>
+          <li class="header-item--mobile scroll-button" data-target="main">
+            Основные услуги
+          </li>
+          <li class="header-item--mobile scroll-button" data-target="add">
+            Дополнительные услуги
+          </li>
+          <li class="header-item--mobile scroll-button" data-target="choose">
+            Наши преимущества
+          </li>
+          <li class="header-item--mobile scroll-button" data-target="form">
+            Оставить заявку
+          </li>
         </ul>
       </nav>
     </header>
     <main class="main">
       <section class="about">
         <div class="container">
-          <div class="about-wrapper">
+          <div id="about" class="about-wrapper content-block">
             <div class="about-wrapper--title">
               <span class="title-span title-span--about">О компании</span>
             </div>
@@ -109,7 +136,7 @@
           </div>
         </div>
       </section>
-      <section class="basic">
+      <section id="main" class="basic content-block">
         <div class="container">
           <div class="basic-wrapper">
             <div class="basic-wrapper--title">
@@ -479,7 +506,7 @@
       </section>
       <section class="add">
         <div class="container">
-          <div class="add-wrapper">
+          <div id="add" class="add-wrapper content-block">
             <div class="add-wrapper--title">
               <span class="title-span title-span--add"
                 >Дополнительные услуги</span
@@ -505,7 +532,12 @@
                     состава
                   </li>
                 </ul>
-                <button class="button button--add">Оставить заявку</button>
+                <button
+                  class="button button--add scroll-button"
+                  data-target="form"
+                >
+                  Оставить заявку
+                </button>
               </div>
               <div class="add-item">
                 <div class="add-item--img">
@@ -530,7 +562,12 @@
                     <span>·</span> Минимизация рисков и задержек при оформлении
                   </li>
                 </ul>
-                <button class="button button--add">Оставить заявку</button>
+                <button
+                  class="button button--add scroll-button"
+                  data-target="form"
+                >
+                  Оставить заявку
+                </button>
               </div>
               <div class="add-item">
                 <div class="add-item--img">
@@ -554,7 +591,12 @@
                     запросу клиента
                   </li>
                 </ul>
-                <button class="button button--add">Оставить заявку</button>
+                <button
+                  class="button button--add scroll-button"
+                  data-target="form"
+                >
+                  Оставить заявку
+                </button>
               </div>
             </div>
           </div>
@@ -562,18 +604,16 @@
       </section>
       <section class="choose">
         <div class="container">
-          <div class="choose-wrapper">
+          <div id="choose" class="choose-wrapper content-block">
             <div class="choose-wrapper--title">
-              <span class="title-span title-span--add"
-                >Дополнительные услуги</span
-              >
+              <span class="title-span title-span--add">Наши преимущества</span>
             </div>
             <div class="choose-container">
               <div class="choose-title">
                 <h1 class="title1"><span>Почему</span> выбирают нас?</h1>
               </div>
               <div class="choose-list">
-                <div class="choose-item">
+                <div class="choose-item choose-item--one">
                   <div class="choose-header--accordion">
                     <span>Профессиональный опыт и&nbsp;партнерская сеть</span>
                     <button>
@@ -598,7 +638,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="choose-item">
+                <div class="choose-item choose-item--two">
                   <div class="choose-header--accordion">
                     <span>Современные технологии логистики</span>
                     <button>
@@ -615,6 +655,12 @@
                       «ЭТРАН»<br />ЕЛС ФГУП «ЖДН», ФГУП «КЖД», ОАО «РЖД»<br />Контур
                       ДИАДОК
                     </div>
+                    <div class="chose-content--item">
+                      <span>·</span> Преимущества цифровых решений: <br />
+                      Реальный мониторинг грузоперевозок <br />Точное управление
+                      логистическими процессами <br />Гарантия своевременности и
+                      достоверности данных
+                    </div>
                   </div>
                 </div>
               </div>
@@ -622,7 +668,7 @@
           </div>
         </div>
       </section>
-      <section class="advice">
+      <section id="form" class="advice content-block">
         <div class="container">
           <div class="advice-wrapper">
             <div class="advice-title">
@@ -691,10 +737,18 @@
           </div>
           <nav class="footer-nav">
             <ul class="footer-list">
-              <li class="footer-item">О компании</li>
-              <li class="footer-item">Основные услуги</li>
-              <li class="footer-item">Дополнительные услуги</li>
-              <li class="footer-item">Наши преимущества</li>
+              <li class="footer-item scroll-button" data-target="about">
+                О компании
+              </li>
+              <li class="footer-item scroll-button" data-target="main">
+                Основные услуги
+              </li>
+              <li class="footer-item scroll-button" data-target="add">
+                Дополнительные услуги
+              </li>
+              <li class="footer-item scroll-button" data-target="choose">
+                Наши преимущества
+              </li>
             </ul>
           </nav>
           <div class="footer-contacts">
@@ -717,7 +771,12 @@
               >Нужна перевозка или консультация? <br />
               Оставьте заявку</span
             >
-            <button class="button button--footer">Оставить заявку</button>
+            <button
+              class="button button--footer scroll-button"
+              data-target="form"
+            >
+              Оставить заявку
+            </button>
           </div>
         </div>
       </div>
