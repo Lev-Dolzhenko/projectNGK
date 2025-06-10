@@ -678,7 +678,89 @@
               Просто расскажите о своей перевозке —<br />Мы предложим лучшие
               условия!
             </div>
-            <form class="advice-form" id="adviceForm">
+
+            <form
+              class="advice-form"
+              id="adviceForm"
+              action="https://formspree.io/f/mgvyajyv"
+              method="POST"
+            >
+              <div class="adive-input--wrapper">
+                <input
+                  name="userName"
+                  placeholder="Как вас зовут?"
+                  type="text"
+                  required
+                />
+              </div>
+              <div class="adive-input--wrapper">
+                <input
+                  name="company"
+                  placeholder="Ваша компания"
+                  type="text"
+                  required
+                />
+              </div>
+              <div class="adive-input--wrapper adive-input--radios">
+                <button type="button" class="advice-header--accordeon">
+                  Запрос
+                  <img src="images/advice/arrowAccordeon.svg" alt="Запрос" />
+                </button>
+                <div class="radio-items">
+                  <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Перевозка груза"
+                      checked
+                    />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Перевозка груза</span>
+                  </label>
+                  <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Экспедирование грузов"
+                    />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Экспедирование грузов</span>
+                  </label>
+                  <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Предоставление вагона"
+                    />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Предоставление вагона</span>
+                  </label>
+                </div>
+              </div>
+              <div class="adive-input--wrapper">
+                <input name="email" placeholder="Email" type="email" required />
+              </div>
+              <div class="adive-input--wrapper">
+                <input
+                  name="phone"
+                  placeholder="+7 (999) 999-99-99"
+                  type="tel"
+                  required
+                />
+              </div>
+              <div class="adive-input--wrapper">
+                <input name="comment" placeholder="Комментарий" type="text" />
+              </div>
+
+              <button type="submit" class="button button--advice">
+                Оставить заявку
+              </button>
+              <span id="politicConf">
+                Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности
+              </span>
+            </form>
+
+            <!-- <form class="advice-form" id="adviceForm">
               <div class="adive-input--wrapper">
                 <input
                   name="userName"
@@ -753,7 +835,7 @@
                 >Нажимая кнопку, вы соглашаетесь с Политикой
                 конфиденциальности</span
               >
-            </form>
+            </form> -->
           </div>
         </div>
       </section>
