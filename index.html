@@ -678,12 +678,23 @@
               Просто расскажите о своей перевозке —<br />Мы предложим лучшие
               условия!
             </div>
-            <form class="advice-form" action="submit">
+            <form class="advice-form" id="adviceForm">
+              <!-- Добавил id для JS -->
               <div class="adive-input--wrapper">
-                <input placeholder="Как вас зовут?" type="text" />
+                <input
+                  name="userName"
+                  placeholder="Как вас зовут?"
+                  type="text"
+                  required
+                />
               </div>
               <div class="adive-input--wrapper">
-                <input placeholder="Ваша компания" type="text" />
+                <input
+                  name="company"
+                  placeholder="Ваша компания"
+                  type="text"
+                  required
+                />
               </div>
               <div class="adive-input--wrapper adive-input--radios">
                 <button type="button" class="advice-header--accordeon">
@@ -692,37 +703,56 @@
                 </button>
                 <div class="radio-items">
                   <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Перевозка груза"
+                      checked
+                    />
                     <span class="radio-custom"></span>
                     <span class="radio-label">Перевозка груза</span>
-                    <input type="radio" name="option" value="1" checked />
                   </label>
-
                   <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Экспедирование грузов"
+                    />
                     <span class="radio-custom"></span>
                     <span class="radio-label">Экспедирование грузов</span>
-                    <input type="radio" name="option" value="2" />
                   </label>
 
                   <label class="radio-item">
+                    <input
+                      type="radio"
+                      name="requestType"
+                      value="Предоставление вагона"
+                    />
                     <span class="radio-custom"></span>
                     <span class="radio-label">Предоставление вагона</span>
-                    <input type="radio" name="option" value="3" />
                   </label>
                 </div>
               </div>
               <div class="adive-input--wrapper">
-                <input placeholder="Email" type="text" />
+                <input name="email" placeholder="Email" type="email" required />
               </div>
               <div class="adive-input--wrapper">
-                <input placeholder="+7 (999) 999-99-99" type="text" />
+                <input
+                  name="phone"
+                  placeholder="+7 (999) 999-99-99"
+                  type="tel"
+                  required
+                />
               </div>
               <div class="adive-input--wrapper">
-                <input placeholder="Комментарий" type="text" />
+                <input name="comment" placeholder="Комментарий" type="text" />
               </div>
-              <button class="button button--advice">Оставить заявку</button>
+              <button type="submit" class="button button--advice">
+                Оставить заявку
+              </button>
               <span id="politicConf"
-                >Нажимая кнопку “Оставить заявку”, вы соглашаетесь
-                с&nbsp;Политикой конфиденциальности</span
+                >Нажимая кнопку, вы соглашаетесь с Политикой
+                конфиденциальности</span
               >
             </form>
           </div>
